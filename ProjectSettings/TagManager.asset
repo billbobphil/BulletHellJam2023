@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Grid
+    uniqueID: 1027115327
+    locked: 0
+  - name: InPlay
+    uniqueID: 4167280673
+    locked: 0
+  - name: Overlay
+    uniqueID: 1863392223
+    locked: 0

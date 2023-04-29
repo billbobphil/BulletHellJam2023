@@ -1,0 +1,36 @@
+Bullet Hell Game Jam Color Palette Reference
+
+Grey: 
+7f7f7f
+rgb(127, 127, 127)
+hsl(0, 0%, 50%)
+
+Dark Purple:
+28232d
+rgb(40, 35, 45)
+hsl(270, 12%, 16%)
+
+Light purple:
+44404d
+rgb(68, 64, 77)
+hsl(258, 9%, 28%)
+
+"Dark" Blue:
+788196
+rgb(120, 129, 150)
+hsl(222, 13%, 53%)
+
+Light Blue:
+9eacb9
+rgb(158, 172, 185)
+hsl(209, 16%, 67%)
+
+Coral:
+f4cecc
+rgb(244, 206, 204)
+hsl(3, 65%, 88%)
+
+White:
+ffffff
+rgb(255, 255, 255)
+hsl(0, 0%, 100%)
