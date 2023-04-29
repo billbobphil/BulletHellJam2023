@@ -9,6 +9,8 @@ namespace Grid
         private Color _nonHighlightColor;
         private Color _highlightColor;
         private bool _isSelectable;
+        
+        public GameObject towerPrefab;
 
         public void SetTileColor(Color tileColor)
         {
@@ -30,6 +32,7 @@ namespace Grid
         {
             if(!_isSelectable) return;
             Debug.Log($"I was clicked! {transform.position}");
+            Instantiate(towerPrefab, transform.position, Quaternion.identity);
         }
 
         public void OnMouseEnter()

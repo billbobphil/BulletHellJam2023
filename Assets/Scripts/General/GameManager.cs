@@ -18,6 +18,8 @@ namespace General
             
             Instantiate(enemyPrefab, gridManager.GetBottomLeftOfGrid(), Quaternion.identity);
             Instantiate(enemyPrefab, gridManager.GetTopRightOfGrid(), Quaternion.identity);
+            Instantiate(enemyPrefab, gridManager.GetTopLeftOfGrid(), Quaternion.identity);
+            Instantiate(enemyPrefab, gridManager.GetBottomRightOfGrid(), Quaternion.identity);
         }
     }
 }

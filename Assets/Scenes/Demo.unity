@@ -483,7 +483,7 @@ MonoBehaviour:
   tilePrefab: {fileID: 4673897301783375852, guid: 44a65b60f234b614697c9cee8f16a75b, type: 3}
   mainCamera: {fileID: 519420031}
   showIndividualTiles: 0
-  allowTileSelection: 0
+  allowTileSelection: 1
   normalColor: {r: 0.26666668, g: 0.2509804, b: 0.3019608, a: 1}
   showTilesColorOne: {r: 0.47058824, g: 0.5058824, b: 0.5882353, a: 1}
   showTilesColorTwo: {r: 0.61960787, g: 0.6745098, b: 0.7254902, a: 1}
