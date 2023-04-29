@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d46aeb9cc9dee0f3456ba75b93fa0e342f0d7766"
+      "hash": "bfea7c8fdac9144bae24b7e8a27ee4a0fd121a19"
     },
     "com.unity.2d.animation": {
       "version": "7.0.5",
@@ -139,15 +139,6 @@
         "com.unity.2d.tilemap": "1.0.0",
         "com.unity.2d.tilemap.extras": "2.2.2"
       }
-    },
-    "com.unity.ide.rider": {
-      "version": "3.0.13",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ext.nunit": "1.0.6"
-      },
-      "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
       "version": "2.0.14",

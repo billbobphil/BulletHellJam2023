@@ -20,7 +20,7 @@ namespace Enemies
         {
             for (;;)
             {
-                yield return new WaitForSecondsRealtime(fireRateSeconds);
+                yield return new WaitForSeconds(fireRateSeconds);
                 Shoot();
             }
         }

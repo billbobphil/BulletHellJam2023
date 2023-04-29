@@ -9,8 +9,8 @@ namespace Grid
         public int height;
         public GridTile tilePrefab;
         public Camera mainCamera;
-        public bool showIndividualTiles;
-        public bool allowTileSelection;
+        [SerializeField] private bool showIndividualTiles;
+        [SerializeField] private bool allowTileSelection;
         public Color normalColor;
         public Color showTilesColorOne;
         public Color showTilesColorTwo;
