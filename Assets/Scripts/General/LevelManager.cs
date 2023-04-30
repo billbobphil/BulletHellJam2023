@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Grid;
 using Levels;
 using TMPro;
@@ -31,6 +32,12 @@ namespace General
 
         public void Start()
         {
+            StartCoroutine(HackForSillyBuildTextBug());
+        }
+
+        private IEnumerator HackForSillyBuildTextBug()
+        {
+            yield return new WaitForEndOfFrame();
             buildModePanel.SetActive(false);
         }
 
