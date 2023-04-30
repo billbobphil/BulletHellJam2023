@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using General;
 using UnityEngine;
 
 namespace Grid
@@ -16,6 +17,7 @@ namespace Grid
         public Color showTilesColorTwo;
         public Color tileHighlightColor;
         private bool _hasGridBeenGenerated;
+        public BuildPhaseManager buildPhaseManager;
 
         private Dictionary<Vector2, GridTile> tiles = new();
         
@@ -76,6 +78,7 @@ namespace Grid
                     tile.name = $"Tile ({x}, {y})";
                     tiles.Add(new Vector2(x, y), tile);
                     tile.SetHighlightColor(tileHighlightColor);
+                    tile.gridManager = this;
 
                     SetTileColor(tile);
                     ApplyTileSelectionPolicy(tile);
@@ -110,6 +113,16 @@ namespace Grid
         public Vector3 GetTopLeftOfGrid()
         {
             return new Vector3(0, height - 1, 0);
+        }
+
+        public void TileClicked(Vector2 tileCoordinates)
+        {
+            buildPhaseManager.CreateTower(tileCoordinates);
+        }
+
+        public void MarkTileAsOccupied(Vector2 tileCoordinates)
+        {
+            tiles[tileCoordinates].isOccupied = true;
         }
 
         private void SetTileColor(GridTile tile)

@@ -1,14 +1,17 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Grid
 {
     public class GridTile : MonoBehaviour
     {
+        public GridManager gridManager;
         public SpriteRenderer spriteRenderer;
         private Color _nonHighlightColor;
         private Color _highlightColor;
         private bool _isSelectable;
+        public bool isOccupied;
         
         public GameObject towerPrefab;
 
@@ -30,20 +33,22 @@ namespace Grid
 
         public void OnMouseDown()
         {
-            if(!_isSelectable) return;
-            Debug.Log($"I was clicked! {transform.position}");
-            Instantiate(towerPrefab, transform.position, Quaternion.identity);
+            if(!_isSelectable || isOccupied) return;
+            
+            gridManager.TileClicked(transform.position);
         }
 
         public void OnMouseEnter()
         {
-            if(!_isSelectable) return;
+            if(!_isSelectable || isOccupied) return;
+            
             spriteRenderer.color = _highlightColor;
         }
 
         public void OnMouseExit()
         {
             if(!_isSelectable) return;
+            
             spriteRenderer.color = _nonHighlightColor;
         }
     }

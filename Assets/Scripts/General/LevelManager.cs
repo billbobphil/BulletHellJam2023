@@ -1,4 +1,5 @@
-﻿using Grid;
+﻿using System.Collections.Generic;
+using Grid;
 using Levels;
 using TMPro;
 using UnityEngine;
@@ -20,12 +21,15 @@ namespace General
         public void Awake()
         {
             playModePanel.SetActive(true);
-            buildModePanel.SetActive(false);
             _levelData = GetComponent<LevelData>();
             currentBuildPhaseCharges = _levelData.GetBuildPhaseCharges();
             buildPhaseChargesText.text = currentBuildPhaseCharges.ToString();
         }
-        
+
+        public void Start()
+        {
+            buildModePanel.SetActive(false);
+        }
         public bool ActivateBuildPhase()
         {
             if (currentBuildPhaseCharges > 0)
@@ -73,6 +77,16 @@ namespace General
         {
             gridManager.DisallowTileSelection();
             gridManager.SetTilesToNormal();
+        }
+
+        public List<GameObject> GetTowerPrefabsForLevel()
+        {
+            return _levelData.towerPrefabs;
+        } 
+        
+        public List<int> GetTowerQuantitiesForLevel()
+        {
+            return _levelData.towerQuantities;
         }
     }
 }
