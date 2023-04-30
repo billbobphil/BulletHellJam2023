@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7505218315215538047}
   - component: {fileID: 1063170413357307485}
   - component: {fileID: -1623043610604280971}
-  - component: {fileID: -5088941992902694879}
   - component: {fileID: 4085831689824884704}
   m_Layer: 0
   m_Name: BaseEnemy
@@ -139,18 +138,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5088941992902694879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7505218315215538046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334bbafc77364f3d9b81f2a15ad84c30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4085831689824884704
 MonoBehaviour:
   m_ObjectHideFlags: 0
