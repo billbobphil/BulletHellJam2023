@@ -27,8 +27,12 @@ namespace Player
             _healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
 
             //TODO: something to do with the way the player dies
-            Debug.Log("Player is dead!");
-            Destroy(gameObject);
+
+            if (_currentHealth <= 0)
+            {
+                Debug.Log("Player is dead!");
+                Destroy(gameObject);    
+            }
         }
     }
 }
