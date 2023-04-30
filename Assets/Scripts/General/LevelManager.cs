@@ -3,6 +3,7 @@ using Grid;
 using Levels;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utilities;
 
 namespace General
@@ -12,24 +13,32 @@ namespace General
         public GridManager gridManager;
         public GameObject playModePanel;
         public GameObject buildModePanel;
-        private LevelData _levelData;
+        [SerializeField]
+        private LevelData levelData;
         public TextMeshProUGUI buildPhaseChargesText;
         public int currentBuildPhaseCharges;
         public TextMeshProUGUI enterBuildPhaseLabel;
         public TextMeshProUGUI enterBuildPhaseCommand;
+        public WaveManager waveManager;
 
         public void Awake()
         {
             playModePanel.SetActive(true);
-            _levelData = GetComponent<LevelData>();
-            currentBuildPhaseCharges = _levelData.GetBuildPhaseCharges();
+            currentBuildPhaseCharges = levelData.GetBuildPhaseCharges();
             buildPhaseChargesText.text = currentBuildPhaseCharges.ToString();
+            waveManager.SetWaves(levelData.waves);
         }
 
         public void Start()
         {
             buildModePanel.SetActive(false);
         }
+
+        public void StartLevel()
+        {
+            waveManager.RunWaves();
+        }
+
         public bool ActivateBuildPhase()
         {
             if (currentBuildPhaseCharges > 0)
@@ -81,12 +90,12 @@ namespace General
 
         public List<GameObject> GetTowerPrefabsForLevel()
         {
-            return _levelData.towerPrefabs;
+            return levelData.towerPrefabs;
         } 
         
         public List<int> GetTowerQuantitiesForLevel()
         {
-            return _levelData.towerQuantities;
+            return levelData.towerQuantities;
         }
     }
 }

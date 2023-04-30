@@ -10,7 +10,6 @@ namespace General
         public GridManager gridManager;
         public GameObject playerPrefab;
         public WallGenerator wallGenerator;
-        public GameObject enemyPrefab;
         public LevelManager levelManager;
 
         private void Awake()
@@ -23,11 +22,7 @@ namespace General
             gridManager.GenerateGrid();
             Instantiate(playerPrefab, gridManager.GetCenterOfGrid(), Quaternion.identity);
             wallGenerator.GenerateWalls(-1, gridManager.width, -1, gridManager.height);
-            
-            Instantiate(enemyPrefab, gridManager.GetBottomLeftOfGrid(), Quaternion.identity);
-            Instantiate(enemyPrefab, gridManager.GetTopRightOfGrid(), Quaternion.identity);
-            Instantiate(enemyPrefab, gridManager.GetTopLeftOfGrid(), Quaternion.identity);
-            Instantiate(enemyPrefab, gridManager.GetBottomRightOfGrid(), Quaternion.identity);
+            levelManager.StartLevel();
         }
 
         private void LateUpdate()

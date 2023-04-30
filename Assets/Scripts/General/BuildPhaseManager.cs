@@ -26,7 +26,6 @@ namespace General
         public void GenerateTowerInventoryInterface()
         {
             RectTransform towerInventoryPanelRect = towerInventoryPanel.GetComponent<RectTransform>();
-            Debug.Log(towerInventoryPanelRect.rect.height);
             float towerMidHeight = towerInventoryPanelRect.rect.height / 2;
             float yPosForFirstElement = towerMidHeight - 75;
             
