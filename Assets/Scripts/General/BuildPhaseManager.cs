@@ -51,6 +51,8 @@ namespace General
         {
             int index = _towerPrefabs.FindIndex(tower => tower == _selectedTowerPrefab);
 
+            if (index == -1) return;
+            
             if (_towerQuantities[index] > 0)
             {
                 //TODO: Guard this functionality with clauses if we want some sort of limiting / purchase system

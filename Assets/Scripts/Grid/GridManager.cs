@@ -69,6 +69,9 @@ namespace Grid
             }
             
             _hasGridBeenGenerated = true;
+
+            GameObject gridFolder = new();
+            gridFolder.name = "Grid Tiles";
             
             for (int x = 0; x < width; x++)
             {
@@ -79,6 +82,7 @@ namespace Grid
                     tiles.Add(new Vector2(x, y), tile);
                     tile.SetHighlightColor(tileHighlightColor);
                     tile.gridManager = this;
+                    tile.transform.SetParent(gridFolder.transform);
 
                     SetTileColor(tile);
                     ApplyTileSelectionPolicy(tile);
