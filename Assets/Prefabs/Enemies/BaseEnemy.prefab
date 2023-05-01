@@ -346,6 +346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarSprite: {fileID: 6926419679303016266}
+  reduceSpeed: 0
+  _animateHealthBar: 0
 --- !u!114 &2350242791300205455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,8 +360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5057cbe4e6ba4843ad59a4e98178f23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 2
-  _healthBar: {fileID: -1419090004367295948}
+  maxHealth: 2
+  healthBar: {fileID: -1419090004367295948}
 --- !u!1 &7960850812854612193
 GameObject:
   m_ObjectHideFlags: 0

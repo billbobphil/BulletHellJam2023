@@ -11,7 +11,7 @@ namespace General
         private List<Wave> _waves;
         public int currentWaveIndex;
         [SerializeField] private TextMeshProUGUI wavesRemainingLabel;
-        private List<GameObject> _enemiesAlive;
+        private List<GameObject> _enemiesAlive = new();
         
         //TODO: some sort of logic tracking the remaining enemies so we can trigger when the next wave should begin
 

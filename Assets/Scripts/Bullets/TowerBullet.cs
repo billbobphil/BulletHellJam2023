@@ -5,8 +5,10 @@ namespace Bullets
 {
     public abstract class TowerBullet : Bullet
     {
-        private void OnTriggerEnter2D(Collider2D other)
+        protected override void OnTriggerEnter2D(Collider2D other)
         {
+            base.OnTriggerEnter2D(other);
+            
             if (!other.CompareTag("Enemy")) return;
 
             //TODO: presumably some logic here about amount of damage the bullet does
