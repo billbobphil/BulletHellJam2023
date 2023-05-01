@@ -9,7 +9,8 @@ namespace General
     {
         public GameObject towerPrefab;
         private BuildPhaseManager _buildPhaseManager;
-        public TextMeshProUGUI towerCountText;        
+        public TextMeshProUGUI towerCountText;
+        public Image backgroundImage;
 
         private void Start()
         {
@@ -19,6 +20,8 @@ namespace General
         public void SelectTower()
         {
             _buildPhaseManager.SetSelectedTowerPrefab(towerPrefab);
+            Color currentColor = backgroundImage.color;
+            backgroundImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1);
         }
     }
 }
