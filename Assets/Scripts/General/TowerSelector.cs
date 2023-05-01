@@ -11,6 +11,7 @@ namespace General
         private BuildPhaseManager _buildPhaseManager;
         public TextMeshProUGUI towerCountText;
         public Image backgroundImage;
+        public Image foregroundImage;
 
         private void Start()
         {

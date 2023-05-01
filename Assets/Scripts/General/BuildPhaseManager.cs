@@ -37,7 +37,7 @@ namespace General
                 TowerSelector selectorComponent = towerSelector.GetComponent<TowerSelector>();
                 selectorComponent.towerPrefab = _towerPrefabs[i];
                 selectorComponent.towerCountText.text = _towerQuantities[i].ToString();
-                towerSelector.GetComponentInChildren<Image>().sprite = _towerPrefabs[i].GetComponent<SpriteRenderer>().sprite;
+                selectorComponent.foregroundImage.sprite = _towerPrefabs[i].GetComponent<SpriteRenderer>().sprite;
                 _towerSelectors.Add(towerSelector);
             }
         }

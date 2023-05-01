@@ -1257,8 +1257,7 @@ MonoBehaviour:
     buildPhaseCharges: 2
     towerPrefabs:
     - {fileID: 8529491548966735595, guid: da1f1b3eb99247d429f89877b06688d9, type: 3}
-    - {fileID: 3647032003683324998, guid: a7c183f7db620ea49b4889593808162f, type: 3}
-    towerQuantities: 0200000005000000
+    towerQuantities: 02000000
     waves:
     - enemySpawns:
       - enemyPrefab: {fileID: 7505218315215538046, guid: 1d65872ec92fcf94a8a255da71d7c4e4, type: 3}
@@ -1414,7 +1413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1114729236
 RectTransform:
   m_ObjectHideFlags: 0
