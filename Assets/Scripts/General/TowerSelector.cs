@@ -20,8 +20,15 @@ namespace General
         public void SelectTower()
         {
             _buildPhaseManager.SetSelectedTowerPrefab(towerPrefab);
+            _buildPhaseManager.UnSelectOtherTowerSelectors(gameObject);
             Color currentColor = backgroundImage.color;
             backgroundImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1);
+        }
+        
+        public void UnSelectTower()
+        {
+            Color currentColor = backgroundImage.color;
+            backgroundImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 0);
         }
     }
 }

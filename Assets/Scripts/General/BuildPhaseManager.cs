@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Grid;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,6 +45,14 @@ namespace General
         public void SetSelectedTowerPrefab(GameObject towerPrefab)
         {
             _selectedTowerPrefab = towerPrefab;
+        }
+
+        public void UnSelectOtherTowerSelectors(GameObject selectedTowerSelector)
+        {
+            foreach (GameObject selector in _towerSelectors.Where(selector => selector != selectedTowerSelector))
+            {
+                selector.GetComponent<TowerSelector>().UnSelectTower();
+            }
         }
 
         public void CreateTower(Vector2 towerCoordinates)
