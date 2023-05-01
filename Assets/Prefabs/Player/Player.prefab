@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 7631076044366467482}
   - component: {fileID: 6656225561679321633}
   - component: {fileID: 4474299878843943219}
+  - component: {fileID: -6084585567138938373}
+  - component: {fileID: 9089170587183592450}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -151,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a28d54a30f46f093c91db41cb527b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealthController: {fileID: 4474299878843943219}
 --- !u!114 &4474299878843943219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,5 +165,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731f2b13801b4416bdbcff7003dfa117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   healthBar: {fileID: 0}
+--- !u!114 &-6084585567138938373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631076044366467487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: -1
+    m_ImpulseShape: 3
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.1
+    m_ImpulseType: 1
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0.5, y: 0, z: 0}
+--- !u!114 &9089170587183592450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631076044366467487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc7ef8eb9fb4674b4ceba2b7aff0fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

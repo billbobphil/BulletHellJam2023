@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Player
 {
     public class PlayerCollisionController : MonoBehaviour
     {
-        [SerializeField]
-        private PlayerHealthController _playerHealthController;
+        public static UnityAction<float> OnPlayerHit;
         
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -14,14 +14,14 @@ namespace Player
             {
                 Debug.Log("Player hit by bullet");
                 Destroy(other.gameObject);
-                _playerHealthController.HitPlayer(1);
+                OnPlayerHit?.Invoke(1);
             }
             
             if (other.gameObject.CompareTag("Enemy"))
             {
                 Debug.Log("Player was hit by enemy");
                 Destroy(other.gameObject);
-                _playerHealthController.HitPlayer(1);
+                OnPlayerHit?.Invoke(1);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using General;
 using UnityEngine;
+using Utilities;
 
 namespace Grid
 {
@@ -92,6 +93,7 @@ namespace Grid
             // Set camera to center of grid
             Vector3 centerOfGrid = GetCenterOfGrid();
             mainCamera.transform.position = new Vector3(centerOfGrid.x, centerOfGrid.y, mainCamera.transform.position.z);
+            mainCamera.gameObject.GetComponent<CameraPositionResetter>().originalCameraPosition = mainCamera.transform.position;
         }
         
         public Vector3 GetCenterOfGrid()

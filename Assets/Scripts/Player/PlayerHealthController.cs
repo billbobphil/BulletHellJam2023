@@ -1,5 +1,7 @@
-﻿using General;
+﻿using System;
+using General;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 namespace Player
@@ -19,6 +21,16 @@ namespace Player
         {
             _currentHealth = maxHealth;
             healthBar.UpdateHealthBar(maxHealth, _currentHealth);
+        }
+
+        private void OnEnable()
+        {
+            PlayerCollisionController.OnPlayerHit += HitPlayer;
+        }
+        
+        private void OnDisable()
+        {
+            PlayerCollisionController.OnPlayerHit -= HitPlayer;
         }
 
         public void HitPlayer(float damage)
