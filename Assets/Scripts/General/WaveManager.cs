@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace General
@@ -9,12 +10,15 @@ namespace General
         //Commented out because no Wave Class created yet
         private List<Wave> _waves;
         public int currentWaveIndex;
+        [SerializeField] private TextMeshProUGUI wavesRemainingLabel;
+        private List<GameObject> _enemiesAlive;
         
         //TODO: some sort of logic tracking the remaining enemies so we can trigger when the next wave should begin
 
         public void SetWaves(List<Wave> waves)
         {
             _waves = waves;
+            wavesRemainingLabel.text = _waves.Count.ToString();
         }
 
         public void RunWaves()
@@ -30,10 +34,11 @@ namespace General
             
             foreach (EnemySpawnRecord enemySpawnRecord in currentWave.enemySpawns)
             {
-                Instantiate(enemySpawnRecord.enemyPrefab, enemySpawnRecord.spawnLocation, Quaternion.identity);
+                _enemiesAlive.Add(Instantiate(enemySpawnRecord.enemyPrefab, enemySpawnRecord.spawnLocation, Quaternion.identity));
             }
             
             currentWaveIndex++;
+            wavesRemainingLabel.text = (_waves.Count - currentWaveIndex + 1).ToString();
         }
     }
 }
