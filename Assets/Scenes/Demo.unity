@@ -1272,6 +1272,7 @@ MonoBehaviour:
   enterBuildPhaseLabel: {fileID: 2125425747}
   enterBuildPhaseCommand: {fileID: 1946270998}
   waveManager: {fileID: 893265511}
+  buildPhaseManager: {fileID: 847325976}
 --- !u!4 &893265510
 Transform:
   m_ObjectHideFlags: 0

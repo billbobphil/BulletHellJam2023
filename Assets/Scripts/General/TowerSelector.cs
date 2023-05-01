@@ -13,7 +13,7 @@ namespace General
         public Image backgroundImage;
         public Image foregroundImage;
 
-        private void Start()
+        private void Awake()
         {
             _buildPhaseManager = GameObject.FindWithTag("BuildPhaseManager").GetComponent<BuildPhaseManager>();
         }

@@ -14,13 +14,13 @@ namespace General
         public GridManager gridManager;
         public GameObject playModePanel;
         public GameObject buildModePanel;
-        [SerializeField]
-        private LevelData levelData;
+        [SerializeField] private LevelData levelData;
         public TextMeshProUGUI buildPhaseChargesText;
         public int currentBuildPhaseCharges;
         public TextMeshProUGUI enterBuildPhaseLabel;
         public TextMeshProUGUI enterBuildPhaseCommand;
         public WaveManager waveManager;
+        public BuildPhaseManager buildPhaseManager;
 
         public void Awake()
         {
@@ -55,6 +55,7 @@ namespace General
                 buildModePanel.SetActive(true);     
                 currentBuildPhaseCharges--;
                 buildPhaseChargesText.text = currentBuildPhaseCharges.ToString();
+                buildPhaseManager.SelectFirstTower();
 
                 if (currentBuildPhaseCharges <= 0)
                 {
