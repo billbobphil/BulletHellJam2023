@@ -59,7 +59,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -127686623
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &6116758849638605262
@@ -129,7 +129,7 @@ RectTransform:
   m_GameObject: {fileID: 6482095473478981207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 0.5, z: 1}
+  m_LocalScale: {x: 2, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5815792538228532587}
@@ -192,6 +192,8 @@ GameObject:
   - component: {fileID: 1063170413357307485}
   - component: {fileID: -1623043610604280971}
   - component: {fileID: 4085831689824884704}
+  - component: {fileID: -1419090004367295948}
+  - component: {fileID: 2350242791300205455}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Enemy
@@ -331,6 +333,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4224152498104792362, guid: 79fc502717c95fa4085aa1e2232e41e4, type: 3}
   fireRateSeconds: 1.5
+--- !u!114 &-1419090004367295948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505218315215538046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42dea587c89cb574788ac34baefa8e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBarSprite: {fileID: 6926419679303016266}
+--- !u!114 &2350242791300205455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505218315215538046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5057cbe4e6ba4843ad59a4e98178f23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 2
+  _healthBar: {fileID: -1419090004367295948}
 --- !u!1 &7960850812854612193
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +387,7 @@ RectTransform:
   m_GameObject: {fileID: 7960850812854612193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 0.5, z: 1}
+  m_LocalScale: {x: 2, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5815792538228532587}

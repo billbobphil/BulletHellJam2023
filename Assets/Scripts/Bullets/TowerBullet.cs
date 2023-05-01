@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Enemies;
+using UnityEngine;
 
 namespace Bullets
 {
@@ -8,7 +9,8 @@ namespace Bullets
         {
             if (!other.CompareTag("Enemy")) return;
 
-            Destroy(other.gameObject);
+            //TODO: presumably some logic here about amount of damage the bullet does
+            other.gameObject.GetComponent<EnemyHealthController>().HitEnemy(1);
             Destroy(gameObject);
         }
     }
