@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Enemies;
 using TMPro;
 using UnityEngine;
 
@@ -14,7 +16,26 @@ namespace General
         private List<GameObject> _enemiesAlive = new();
         
         //TODO: some sort of logic tracking the remaining enemies so we can trigger when the next wave should begin
+        private void OnEnable()
+        {
+            EnemyHealthController.OnEnemyDeath += OnEnemyDeath;
+        }
 
+        private void OnDisable()
+        {
+            EnemyHealthController.OnEnemyDeath -= OnEnemyDeath;
+        }
+
+        private void OnEnemyDeath(GameObject enemy)
+        {
+            _enemiesAlive.Remove(enemy);
+            
+            if (_enemiesAlive.Count == 0)
+            {
+                SpawnWave();
+            }    
+        }
+        
         public void SetWaves(List<Wave> waves)
         {
             _waves = waves;
@@ -29,6 +50,8 @@ namespace General
         private void SpawnWave()
         {
             if(currentWaveIndex >= _waves.Count) return;
+            
+            //TODO: could introduce some polish to prep you that the wave is coming and where the enemies will be spawning from?
             
             Wave currentWave = _waves[currentWaveIndex];
             

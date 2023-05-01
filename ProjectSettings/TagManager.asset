@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - BuildPhaseManager
   - PlayerHealthBar
+  - Wall
   layers:
   - Default
   - TransparentFX

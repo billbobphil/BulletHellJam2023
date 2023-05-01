@@ -1248,6 +1248,11 @@ MonoBehaviour:
     - enemySpawns:
       - enemyPrefab: {fileID: 7505218315215538046, guid: 1d65872ec92fcf94a8a255da71d7c4e4, type: 3}
         spawnLocation: {x: 0, y: 0}
+    - enemySpawns:
+      - enemyPrefab: {fileID: 7505218315215538046, guid: 1d65872ec92fcf94a8a255da71d7c4e4, type: 3}
+        spawnLocation: {x: 0, y: 0}
+      - enemyPrefab: {fileID: 7505218315215538046, guid: 1d65872ec92fcf94a8a255da71d7c4e4, type: 3}
+        spawnLocation: {x: 10, y: 5}
   buildPhaseChargesText: {fileID: 403890339}
   currentBuildPhaseCharges: 0
   enterBuildPhaseLabel: {fileID: 2125425747}

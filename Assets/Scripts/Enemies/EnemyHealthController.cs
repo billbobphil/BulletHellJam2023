@@ -1,5 +1,6 @@
 ﻿using General;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 namespace Enemies
@@ -10,6 +11,8 @@ namespace Enemies
         private float _currentHealth;
         [SerializeField]
         private HealthBar healthBar;
+        
+        public static UnityAction<GameObject> OnEnemyDeath;
 
         private void Start()
         {
@@ -25,6 +28,7 @@ namespace Enemies
             //TODO: some sort of more sophisticated death routine
             if (_currentHealth <= 0)
             {
+                OnEnemyDeath?.Invoke(gameObject);
                 Destroy(gameObject);
             }
         }
