@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4327953737884321242, guid: ba5fb7378df63504d8b5c77fc7e5dd34, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327953737884321242, guid: ba5fb7378df63504d8b5c77fc7e5dd34, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327953737884321242, guid: ba5fb7378df63504d8b5c77fc7e5dd34, type: 3}
+      propertyPath: m_Color.r
+      value: 0.61960787
+      objectReference: {fileID: 0}
     - target: {fileID: 6933880541457929771, guid: ba5fb7378df63504d8b5c77fc7e5dd34, type: 3}
       propertyPath: m_Name
       value: DirectionalTowerBullet

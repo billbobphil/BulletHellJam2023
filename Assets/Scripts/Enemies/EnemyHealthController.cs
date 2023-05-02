@@ -1,4 +1,5 @@
 ﻿using General;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -11,8 +12,9 @@ namespace Enemies
         private float _currentHealth;
         [SerializeField]
         private HealthBar healthBar;
-        
+
         public static UnityAction<GameObject> OnEnemyDeath;
+        public static UnityAction AnyEnemyHit;
 
         private void Start()
         {
@@ -24,6 +26,7 @@ namespace Enemies
         {
             _currentHealth = _currentHealth - damage < 0 ? 0 : _currentHealth - damage;
             healthBar.UpdateHealthBar(maxHealth, _currentHealth);
+            AnyEnemyHit?.Invoke();
 
             //TODO: some sort of more sophisticated death routine
             if (_currentHealth <= 0)

@@ -9,6 +9,7 @@ namespace Enemies
         private Transform _playerTransform;
         public GameObject bulletPrefab;
         public float fireRateSeconds;
+        [SerializeField] private AudioSource shootAudioSource;
 
         private void Start()
         {
@@ -27,6 +28,7 @@ namespace Enemies
 
         private void Shoot()
         {
+            shootAudioSource.Play();
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Vector3 direction = (_playerTransform.position - transform.position).normalized;
             bullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(direction.x, direction.y, 0);

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Grid;
 using Levels;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Utilities;
 
@@ -21,6 +23,7 @@ namespace General
         public TextMeshProUGUI enterBuildPhaseCommand;
         public WaveManager waveManager;
         public BuildPhaseManager buildPhaseManager;
+        public static UnityAction OnBuildPhaseToggled;
 
         public void Awake()
         {
@@ -50,6 +53,7 @@ namespace General
         {
             if (currentBuildPhaseCharges > 0)
             {
+                OnBuildPhaseToggled?.Invoke();
                 ShowTowerPlacementUi();
                 playModePanel.SetActive(false);
                 buildModePanel.SetActive(true);     
@@ -70,6 +74,7 @@ namespace General
 
         public void DeactivateBuildPhase()
         {
+            OnBuildPhaseToggled?.Invoke();
             HideTowerPlacementUi();
             playModePanel.SetActive(true);
             buildModePanel.SetActive(false);

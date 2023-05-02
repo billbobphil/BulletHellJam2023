@@ -5,27 +5,11 @@ using UnityEngine;
 
 namespace Towers
 {
-    public class TowerController : MonoBehaviour
+    public class DirectionalTower : ShootingTower
     {
-        public GameObject bulletPrefab;
-        public float fireRateSeconds;
-
-        private void Start()
+        protected override void Shoot()
         {
-            StartCoroutine(ShootRoutine());
-        }
-
-        private IEnumerator ShootRoutine()
-        {
-            for (;;)
-            {
-                yield return new WaitForSeconds(fireRateSeconds);
-                Shoot();    
-            }
-        }
-
-        private void Shoot()
-        {
+            base.Shoot();
             GameObject leftBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             leftBullet.GetComponent<DirectionalTowerBullet>().direction = Vector3.left;
             
