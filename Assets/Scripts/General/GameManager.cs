@@ -1,6 +1,5 @@
 ﻿using Grid;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace General
 {
@@ -11,6 +10,7 @@ namespace General
         public GameObject playerPrefab;
         public WallGenerator wallGenerator;
         public LevelManager levelManager;
+        [SerializeField] private GameObject backgroundImage;
 
         private void Awake()
         {
@@ -22,6 +22,7 @@ namespace General
             gridManager.GenerateGrid();
             Instantiate(playerPrefab, gridManager.GetCenterOfGrid(), Quaternion.identity);
             wallGenerator.GenerateWalls(-1, gridManager.width, -1, gridManager.height);
+            backgroundImage.transform.position = gridManager.GetCenterOfGrid();
             levelManager.StartLevel();
         }
 
