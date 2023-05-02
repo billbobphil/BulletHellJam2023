@@ -1263,7 +1263,7 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   showIndividualTiles: 0
   allowTileSelection: 0
-  normalColor: {r: 0.26666668, g: 0.2509804, b: 0.3019608, a: 1}
+  normalColor: {r: 0.26666668, g: 0.2509804, b: 0.3019608, a: 0.5882353}
   showTilesColorOne: {r: 0.26666668, g: 0.2509804, b: 0.3019608, a: 1}
   showTilesColorTwo: {r: 0.30548012, g: 0.28996083, b: 0.33962262, a: 1}
   tileHighlightColor: {r: 0.95686275, g: 0.80784315, b: 0.8, a: 1}
