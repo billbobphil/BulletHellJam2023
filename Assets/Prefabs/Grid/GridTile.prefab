@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 1027115327
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19c5f0bc704c8494cbbcfb014a7f7ba6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f729df7f1f4832b25b8290cc898f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridManager: {fileID: 0}
   spriteRenderer: {fileID: 6457924656829103689}
+  isOccupied: 0
   towerPrefab: {fileID: 8529491548966735595, guid: da1f1b3eb99247d429f89877b06688d9, type: 3}
 --- !u!61 &7274075492388000326
 BoxCollider2D:

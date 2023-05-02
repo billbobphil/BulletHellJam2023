@@ -234,6 +234,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallPrefab: {fileID: 3577845851189738204, guid: b7f692943f104c142ac22b0b7a7ca9d7, type: 3}
+  topWallSprite: {fileID: -711121174, guid: b78408166da67124bbef065c877d7c12, type: 3}
+  bottomWallSprite: {fileID: -1894190832, guid: b78408166da67124bbef065c877d7c12, type: 3}
+  leftWallSprite: {fileID: 849207511, guid: b78408166da67124bbef065c877d7c12, type: 3}
+  rightWallSprite: {fileID: 1991034901, guid: b78408166da67124bbef065c877d7c12, type: 3}
+  topRightCornerWallSprite: {fileID: -811670927, guid: b78408166da67124bbef065c877d7c12, type: 3}
+  topLeftCornerWallSprite: {fileID: 343228682, guid: b78408166da67124bbef065c877d7c12, type: 3}
+  bottomRightCornerWallSprite: {fileID: -818281248, guid: b78408166da67124bbef065c877d7c12, type: 3}
+  bottomLeftCornerWallSprite: {fileID: -1592160094, guid: b78408166da67124bbef065c877d7c12, type: 3}
 --- !u!1 &180600475
 GameObject:
   m_ObjectHideFlags: 0
