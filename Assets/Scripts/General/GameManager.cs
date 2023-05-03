@@ -6,6 +6,7 @@ namespace General
     public class GameManager : MonoBehaviour
     {
         public static bool IsGamePaused;
+        public static bool IsWaveSpawning;
         public GridManager gridManager;
         public GameObject playerPrefab;
         public WallGenerator wallGenerator;
@@ -26,22 +27,36 @@ namespace General
             levelManager.StartLevel();
         }
 
+        public static void PauseGame()
+        {
+            IsGamePaused = true;
+            Time.timeScale = 0;
+        }
+
+        public static void ResumeGame()
+        {
+            IsGamePaused = false;
+            Time.timeScale = 1;
+        }
+
         private void LateUpdate()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (!IsWaveSpawning && Input.GetKeyDown(KeyCode.Space))
             {
                 if (IsGamePaused)
                 {
-                    Time.timeScale = 1;
-                    IsGamePaused = false;
+                    // Time.timeScale = 1;
+                    // IsGamePaused = false;
+                    ResumeGame();
                     levelManager.DeactivateBuildPhase();
                 }
                 else
                 {
                     if (levelManager.ActivateBuildPhase())
                     {
-                        Time.timeScale = 0;
-                        IsGamePaused = true;    
+                        // Time.timeScale = 0;
+                        // IsGamePaused = true;    
+                        PauseGame();
                     }
                 }
             }

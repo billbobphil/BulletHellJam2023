@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Bullets;
+using Player;
 using UnityEngine;
 
 namespace Enemies
@@ -10,6 +11,21 @@ namespace Enemies
         public GameObject bulletPrefab;
         public float fireRateSeconds;
         [SerializeField] private AudioSource shootAudioSource;
+        
+        private void OnEnable()
+        {
+            PlayerHealthController.OnPlayerDeath += HandlePlayerDeath;
+        }
+        
+        private void OnDisable()
+        {
+            PlayerHealthController.OnPlayerDeath -= HandlePlayerDeath;
+        }
+        
+        private void HandlePlayerDeath()
+        {
+            StopAllCoroutines();
+        }
 
         private void Start()
         {

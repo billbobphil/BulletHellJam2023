@@ -9,6 +9,7 @@ TagManager:
   - BuildPhaseManager
   - PlayerHealthBar
   - Wall
+  - Music
   layers:
   - Default
   - TransparentFX

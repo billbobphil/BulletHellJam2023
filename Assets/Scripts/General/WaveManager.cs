@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Bullets;
 using Enemies;
 using TMPro;
 using UnityEngine;
+using Utilities;
 
 namespace General
 {
@@ -14,6 +17,10 @@ namespace General
         public int currentWaveIndex;
         [SerializeField] private TextMeshProUGUI wavesRemainingLabel;
         private List<GameObject> _enemiesAlive = new();
+        [SerializeField] private GameObject waveTextPanel;
+        [SerializeField] private TextMeshProUGUI waveCountdownText;
+        [SerializeField] private AudioSource waveCountdownAudioSource;
+        [SerializeField] private Pulsate waveTextPulsate;
         
         //TODO: some sort of logic tracking the remaining enemies so we can trigger when the next wave should begin
         private void OnEnable()
@@ -32,7 +39,16 @@ namespace General
             
             if (_enemiesAlive.Count == 0)
             {
-                SpawnWave();
+                if (currentWaveIndex >= _waves.Count)
+                {
+                    Debug.Log("No Waves Remaining");
+                    wavesRemainingLabel.text = "0";
+                    //TODO: trigger level win
+                }
+                else
+                {
+                    SpawnWave();    
+                }
             }    
         }
         
@@ -50,10 +66,49 @@ namespace General
         private void SpawnWave()
         {
             if(currentWaveIndex >= _waves.Count) return;
+
+            //TODO: where the enemies will be spawning from?
+
+            Bullet[] bullets = FindObjectsOfType<Bullet>();
+
+            foreach (Bullet bullet in bullets)
+            {
+                Destroy(bullet.gameObject);
+            }
             
-            //TODO: could introduce some polish to prep you that the wave is coming and where the enemies will be spawning from?
-            
+            GameManager.PauseGame();
+            GameManager.IsWaveSpawning = true;
+            StartCoroutine(ShowWaveSpawningText());
+            StartCoroutine(SpawnEnemies());
+        }
+
+        private IEnumerator ShowWaveSpawningText()
+        {
+            waveTextPanel.SetActive(true);
+            waveCountdownText.text = "3";
+            waveCountdownAudioSource.Play();
+            yield return new WaitForSecondsRealtime(1);
+            waveTextPulsate.enabled = false;
+            waveTextPulsate.enabled = true;
+            waveCountdownText.text = "2";
+            waveCountdownAudioSource.Play();
+            yield return new WaitForSecondsRealtime(1);
+            waveTextPulsate.enabled = false;
+            waveTextPulsate.enabled = true;
+            waveCountdownText.text = "1";
+            waveCountdownAudioSource.Play();
+            yield return new WaitForSecondsRealtime(1);
+            waveTextPanel.SetActive(false);
+            waveCountdownAudioSource.Play();
+        }
+
+        private IEnumerator SpawnEnemies()
+        {
+            yield return new WaitForSecondsRealtime(3);
+            GameManager.ResumeGame();
+            GameManager.IsWaveSpawning = false;
             Wave currentWave = _waves[currentWaveIndex];
+            _enemiesAlive = new List<GameObject>();
             
             foreach (EnemySpawnRecord enemySpawnRecord in currentWave.enemySpawns)
             {

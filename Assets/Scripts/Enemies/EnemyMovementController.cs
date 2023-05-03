@@ -1,4 +1,5 @@
 ﻿using System;
+using Player;
 using UnityEngine;
 
 namespace Enemies
@@ -8,6 +9,21 @@ namespace Enemies
         private Transform _playerTransform;
         public float speed;
 
+        private void OnEnable()
+        {
+            PlayerHealthController.OnPlayerDeath += HandlePlayerDeath;
+        }
+        
+        private void OnDisable()
+        {
+            PlayerHealthController.OnPlayerDeath -= HandlePlayerDeath;
+        }
+        
+        private void HandlePlayerDeath()
+        {
+            _playerTransform = null;
+        }
+        
         private void Start()
         {
             _playerTransform = GameObject.FindWithTag("Player").transform;

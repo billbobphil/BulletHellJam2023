@@ -11,6 +11,7 @@ namespace Player
         [SerializeField] private float maxHealth;
         private float _currentHealth;
         [SerializeField] private HealthBar healthBar;
+        public static UnityAction OnPlayerDeath;
 
         private void Awake()
         {
@@ -38,11 +39,9 @@ namespace Player
             _currentHealth = _currentHealth - damage < 0 ? 0 : _currentHealth - damage;
             healthBar.UpdateHealthBar(maxHealth, _currentHealth);
 
-            //TODO: something to do with the way the player dies
-
             if (_currentHealth <= 0)
             {
-                Debug.Log("Player is dead!");
+                OnPlayerDeath?.Invoke();
                 Destroy(gameObject);    
             }
         }
