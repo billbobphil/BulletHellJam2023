@@ -10,6 +10,7 @@ TagManager:
   - PlayerHealthBar
   - Wall
   - Music
+  - GameManager
   layers:
   - Default
   - TransparentFX

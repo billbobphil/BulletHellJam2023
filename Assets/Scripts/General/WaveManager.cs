@@ -5,6 +5,7 @@ using Bullets;
 using Enemies;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using Utilities;
 
 namespace General
@@ -21,6 +22,8 @@ namespace General
         [SerializeField] private TextMeshProUGUI waveCountdownText;
         [SerializeField] private AudioSource waveCountdownAudioSource;
         [SerializeField] private Pulsate waveTextPulsate;
+
+        public static UnityAction OnLastWaveCleared;
         
         //TODO: some sort of logic tracking the remaining enemies so we can trigger when the next wave should begin
         private void OnEnable()
@@ -41,9 +44,8 @@ namespace General
             {
                 if (currentWaveIndex >= _waves.Count)
                 {
-                    Debug.Log("No Waves Remaining");
                     wavesRemainingLabel.text = "0";
-                    //TODO: trigger level win
+                    OnLastWaveCleared?.Invoke();
                 }
                 else
                 {
