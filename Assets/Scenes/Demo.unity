@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: {fileID: 0}
-  mainMenu: {fileID: 0}
+  mainMenu: {fileID: 102900000, guid: f3710fb5dcfa0b747b8842c3086c9135, type: 3}
 --- !u!114 &168007754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2319,6 +2319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a4c187d1a60be4396c1be90d06982c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicAudioSource: {fileID: 637711707}
 --- !u!4 &637711709
 Transform:
   m_ObjectHideFlags: 0
