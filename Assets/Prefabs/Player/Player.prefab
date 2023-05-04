@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -6084585567138938373}
   - component: {fileID: 9089170587183592450}
   - component: {fileID: -2939891912323396654}
+  - component: {fileID: -7739087650142224377}
   - component: {fileID: 4911298471926223272}
   m_Layer: 0
   m_Name: Player
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: -127686623
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7485d43d2f2550c4791d3aac8e09cb02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fe9247cf1d10cb4b84be42d39795474, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -248,6 +249,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHitAudioSource: {fileID: 4911298471926223272}
+--- !u!114 &-7739087650142224377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631076044366467487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3145c3a6d61745bbb83e67e8953a432a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7631076044366467486}
+  numberOfTimesToFlash: 4
+  flashDuration: 0.1
+  opacityOnFlash: 150
 --- !u!82 &4911298471926223272
 AudioSource:
   m_ObjectHideFlags: 0

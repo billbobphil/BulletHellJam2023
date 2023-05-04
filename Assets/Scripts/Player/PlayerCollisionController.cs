@@ -6,6 +6,7 @@ namespace Player
     public class PlayerCollisionController : MonoBehaviour
     {
         public static UnityAction<float> OnPlayerHit;
+        public static UnityAction CoinCollected;
         
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -22,6 +23,12 @@ namespace Player
                 Debug.Log("Player was hit by enemy");
                 Destroy(other.gameObject);
                 OnPlayerHit?.Invoke(1);
+            }
+
+            if (other.gameObject.CompareTag("Coin"))
+            {
+                CoinCollected?.Invoke();
+                Destroy(other.gameObject);
             }
         }
     }

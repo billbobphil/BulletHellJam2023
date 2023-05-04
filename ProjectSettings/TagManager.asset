@@ -11,6 +11,8 @@ TagManager:
   - Wall
   - Music
   - GameManager
+  - PlayerHealthBarForeground
+  - Coin
   layers:
   - Default
   - TransparentFX

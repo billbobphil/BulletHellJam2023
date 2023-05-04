@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8679245, g: 0.30022538, b: 0.30022538, a: 1}
+  m_Color: {r: 0.4666667, g: 0.50980395, b: 0.6, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: -1419090004367295948}
   - component: {fileID: 2350242791300205455}
   - component: {fileID: 8940571411548334490}
+  - component: {fileID: 7758501625450188516}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Enemy
@@ -370,8 +371,8 @@ SpriteRenderer:
   m_SortingLayerID: -127686623
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.8396226, g: 0.22706768, b: 0.22706768, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 29fa23686d887f749b890586b00e4b2c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -475,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   healthBar: {fileID: -1419090004367295948}
+  enemyHitAnimator: {fileID: 7758501625450188516}
 --- !u!82 &8940571411548334490
 AudioSource:
   m_ObjectHideFlags: 0
@@ -571,6 +573,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7758501625450188516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505218315215538046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f0b6c723d741299fd1e703ba88aef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7505218315215538016}
+  numberOfTimesToFlash: 4
+  flashDuration: 0.1
+  opacityOnFlash: 150
 --- !u!1 &7960850812854612193
 GameObject:
   m_ObjectHideFlags: 0
