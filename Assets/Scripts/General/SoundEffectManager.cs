@@ -10,12 +10,14 @@ namespace General
         [SerializeField] private AudioSource enemyHitAudioSource;
         [SerializeField] private AudioSource buildPhaseToggleAudioSource;
         [SerializeField] private AudioSource playerDeathAudioSource;
+        [SerializeField] private AudioSource coinPickupAudioSource;
 
         private void OnEnable()
         {
             EnemyHealthController.AnyEnemyHit += PlayEnemyHitSound;
             LevelManager.OnBuildPhaseToggled += PlayBuildPhaseToggleSound;
             PlayerHealthController.OnPlayerDeath += PlayPlayerDeathSound;
+            CoinManager.CollectedCoin += PlayCoinPickupSound;
         }
         
         private void OnDisable()
@@ -23,6 +25,7 @@ namespace General
             EnemyHealthController.AnyEnemyHit -= PlayEnemyHitSound;
             LevelManager.OnBuildPhaseToggled -= PlayBuildPhaseToggleSound;
             PlayerHealthController.OnPlayerDeath -= PlayPlayerDeathSound;
+            CoinManager.CollectedCoin -= PlayCoinPickupSound;
         }
         
         private void PlayEnemyHitSound()
@@ -38,6 +41,11 @@ namespace General
         private void PlayPlayerDeathSound()
         {
             playerDeathAudioSource.Play();
+        }
+        
+        private void PlayCoinPickupSound(int _)
+        {
+            coinPickupAudioSource.Play();
         }
     }
 }
