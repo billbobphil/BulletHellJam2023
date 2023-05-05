@@ -26,6 +26,7 @@ namespace General
         public int startingCoins;
         [SerializeField] private CoinManager coinManager;
         [SerializeField] private GameObject buildPhaseLabelFlair;
+        private bool hasLevelBeenStarted;
 
         public void Awake()
         {
@@ -56,6 +57,7 @@ namespace General
 
         public void StartLevel()
         {
+            if (hasLevelBeenStarted) return;
             waveManager.RunWaves();
         }
 

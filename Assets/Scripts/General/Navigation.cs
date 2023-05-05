@@ -24,6 +24,7 @@ namespace General
 
         public void LoadNextLevel()
         {
+            Debug.Log("Loading next level");
             ResetStatics();
             SceneManager.LoadScene(nextLevel.name);
             if (_musicPlayer is not null)

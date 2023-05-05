@@ -25,7 +25,6 @@ namespace General
 
         public static UnityAction OnLastWaveCleared;
         
-        //TODO: some sort of logic tracking the remaining enemies so we can trigger when the next wave should begin
         private void OnEnable()
         {
             EnemyHealthController.OnEnemyDeath += OnEnemyDeath;
@@ -68,8 +67,6 @@ namespace General
         private void SpawnWave()
         {
             if(currentWaveIndex >= _waves.Count) return;
-
-            //TODO: where the enemies will be spawning from?
 
             Bullet[] bullets = FindObjectsOfType<Bullet>();
 

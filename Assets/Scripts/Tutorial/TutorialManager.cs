@@ -84,7 +84,7 @@ namespace Tutorial
                     break;
                case TutorialStages.ShowPlayerEnemy:
                    
-                   waveTimer += Time.deltaTime;
+                   waveTimer += Time.unscaledDeltaTime;
                    
                    if(waveTimer >= waveTimerWaitTime)
                    {
@@ -106,6 +106,7 @@ namespace Tutorial
                    if (Input.GetKeyDown(KeyCode.Space))
                    {
                        ProgressStage(TutorialStages.LetPlayerFinishLevel);
+                       tutorialPanel.SetActive(false);
                        _player.GetComponent<PlayerMovementController>().blockMovement = false;
                    }
                    break;
@@ -123,6 +124,17 @@ namespace Tutorial
         {
             yield return new WaitForSecondsRealtime(delay);
             ProgressStage(nextStage);
+        }
+
+        public void SkipTutorialMessages()
+        {
+            ProgressStage(TutorialStages.LetPlayerFinishLevel);
+            tutorialPanel.SetActive(false);
+            _player.GetComponent<PlayerMovementController>().blockMovement = false;
+            GameManager.BlockBuildInput = false;
+            alwaysHudPanel.SetActive(true);
+            levelManager.DeactivateBuildPhase();
+            levelManager.StartLevel();
         }
 
     }

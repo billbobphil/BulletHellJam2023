@@ -51,8 +51,6 @@ namespace General
             {
                 if (IsGamePaused)
                 {
-                    // Time.timeScale = 1;
-                    // IsGamePaused = false;
                     ResumeGame();
                     levelManager.DeactivateBuildPhase();
                 }
@@ -60,8 +58,6 @@ namespace General
                 {
                     if (levelManager.ActivateBuildPhase())
                     {
-                        // Time.timeScale = 0;
-                        // IsGamePaused = true;    
                         PauseGame();
                     }
                 }
