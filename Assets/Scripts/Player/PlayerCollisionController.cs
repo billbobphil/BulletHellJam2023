@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Enemies;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Player
@@ -13,16 +14,14 @@ namespace Player
             //TODO: need to get damage from the elements that are actually hitting the player
             if (other.CompareTag("Bullet"))
             {
-                Debug.Log("Player hit by bullet");
                 Destroy(other.gameObject);
                 OnPlayerHit?.Invoke(1);
             }
             
             if (other.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Player was hit by enemy");
-                Destroy(other.gameObject);
                 OnPlayerHit?.Invoke(1);
+                other.gameObject.GetComponent<EnemyHealthController>().HitEnemy(1);
             }
 
             if (other.gameObject.CompareTag("Coin"))

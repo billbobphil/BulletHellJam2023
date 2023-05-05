@@ -19,11 +19,14 @@ namespace Tutorial
         [SerializeField] private LevelManager levelManager;
         private GameObject _player;
         [SerializeField] private GridManager gridManager;
+        [SerializeField] private AudioSource tutorialProgressAudioSource;
 
         private Dictionary<TutorialStages, TutorialStageInformation> _tutorialStages = new();
 
         private float waveTimer = 0f;
         private float waveTimerWaitTime = 3f;
+
+        private bool progressedToShowHudStage;
         
         private void Start()
         {
@@ -68,6 +71,8 @@ namespace Tutorial
                     if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)
                         || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
                     {
+                        if (progressedToShowHudStage) return;
+                        progressedToShowHudStage = true;
                         StartCoroutine(ProgressToStageAfterDelay(3f, TutorialStages.ShowPlayerHUD));
                     }
                     break;
@@ -118,12 +123,14 @@ namespace Tutorial
             _tutorialStages[_currentStage].stagePanel.SetActive(false);
             _currentStage = nextStage;
             _tutorialStages[_currentStage].stagePanel.SetActive(true);
+            tutorialProgressAudioSource.Play();
         }
 
         private IEnumerator ProgressToStageAfterDelay(float delay, TutorialStages nextStage)
         {
             yield return new WaitForSecondsRealtime(delay);
             ProgressStage(nextStage);
+            tutorialProgressAudioSource.Play();
         }
 
         public void SkipTutorialMessages()
@@ -135,6 +142,8 @@ namespace Tutorial
             alwaysHudPanel.SetActive(true);
             levelManager.DeactivateBuildPhase();
             levelManager.StartLevel();
+            _player.transform.position = gridManager.GetCenterOfGrid();
+            tutorialProgressAudioSource.Play();
         }
 
     }

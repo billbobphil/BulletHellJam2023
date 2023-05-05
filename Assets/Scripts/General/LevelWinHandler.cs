@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
+using Utilities;
 
 namespace General
 {
@@ -24,6 +26,12 @@ namespace General
         
         private void HandleLevelWin()
         {
+            StartCoroutine(ShowGameWinUi());
+        }
+
+        private IEnumerator ShowGameWinUi()
+        {
+            yield return new WaitForSecondsRealtime(.2f);
             GameManager.PauseGame();
             GameManager.BlockBuildInput = true;
             levelWinPanel.SetActive(true);

@@ -1,4 +1,5 @@
-﻿using Cinemachine;
+﻿using System.Collections;
+using Cinemachine;
 using UnityEngine;
 using Utilities;
 
@@ -28,11 +29,13 @@ namespace Player
         private void TriggerShake(float _)
         {
             _impulseSource.GenerateImpulse(.5f);
-            Invoke(nameof(ResetCamera), .1f);
+            // Invoke(nameof(ResetCamera), .1f);
+            StartCoroutine(ResetCamera());
         }
 
-        private void ResetCamera()
+        private IEnumerator ResetCamera()
         {
+            yield return new WaitForSecondsRealtime(.1f);
             _mainCamera.GetComponent<CameraPositionResetter>().ResetCameraPosition();
         }
     }
