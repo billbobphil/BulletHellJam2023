@@ -4193,12 +4193,12 @@ MonoBehaviour:
     towerQuantities: 02000000
     waves:
     - enemySpawns:
-      - enemyPrefab: {fileID: 7505218315215538046, guid: 1d65872ec92fcf94a8a255da71d7c4e4, type: 3}
+      - enemyPrefab: {fileID: 2382043811759936418, guid: 4a04ec9bd0f821c4f9468b6866c3e756, type: 3}
         spawnLocation: {x: 0, y: 0}
     - enemySpawns:
-      - enemyPrefab: {fileID: 7505218315215538046, guid: 1d65872ec92fcf94a8a255da71d7c4e4, type: 3}
+      - enemyPrefab: {fileID: 2382043811759936418, guid: 4a04ec9bd0f821c4f9468b6866c3e756, type: 3}
         spawnLocation: {x: 0, y: 0}
-      - enemyPrefab: {fileID: 7505218315215538046, guid: 1d65872ec92fcf94a8a255da71d7c4e4, type: 3}
+      - enemyPrefab: {fileID: 2382043811759936418, guid: 4a04ec9bd0f821c4f9468b6866c3e756, type: 3}
         spawnLocation: {x: 10, y: 5}
   currentCoinCountText: {fileID: 403890339}
   enterBuildPhaseLabel: {fileID: 2125425747}
@@ -5329,6 +5329,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224108153}
   m_CullTransparentMesh: 1
+--- !u!1 &1278759760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1278759762}
+  - component: {fileID: 1278759761}
+  m_Layer: 0
+  m_Name: LevelStarter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1278759761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278759760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3f07b7ace94dddb1e19efe6db11ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 893265509}
+--- !u!4 &1278759762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278759760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 568.0622, y: 319.29102, z: -0.6851392}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1412985485
 GameObject:
   m_ObjectHideFlags: 0

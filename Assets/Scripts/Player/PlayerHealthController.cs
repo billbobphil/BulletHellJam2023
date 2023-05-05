@@ -9,7 +9,7 @@ namespace Player
     public class PlayerHealthController : MonoBehaviour
     {
         [SerializeField] private float maxHealth;
-        private float _currentHealth;
+        public float currentHealth;
         [SerializeField] private HealthBar healthBar;
         public static UnityAction OnPlayerDeath;
 
@@ -20,8 +20,8 @@ namespace Player
         
         private void Start()
         {
-            _currentHealth = maxHealth;
-            healthBar.UpdateHealthBar(maxHealth, _currentHealth);
+            currentHealth = maxHealth;
+            healthBar.UpdateHealthBar(maxHealth, currentHealth);
         }
 
         private void OnEnable()
@@ -36,10 +36,10 @@ namespace Player
 
         public void HitPlayer(float damage)
         {
-            _currentHealth = _currentHealth - damage < 0 ? 0 : _currentHealth - damage;
-            healthBar.UpdateHealthBar(maxHealth, _currentHealth);
+            currentHealth = currentHealth - damage < 0 ? 0 : currentHealth - damage;
+            healthBar.UpdateHealthBar(maxHealth, currentHealth);
 
-            if (_currentHealth <= 0)
+            if (currentHealth <= 0)
             {
                 OnPlayerDeath?.Invoke();
                 Destroy(gameObject);    

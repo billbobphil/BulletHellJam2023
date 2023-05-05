@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Bullets;
+using Enemies.Guns;
 using Player;
 using UnityEngine;
 
@@ -7,10 +8,8 @@ namespace Enemies
 {
     public class EnemyShootingController : MonoBehaviour
     {
-        private Transform _playerTransform;
-        public GameObject bulletPrefab;
         public float fireRateSeconds;
-        [SerializeField] private AudioSource shootAudioSource;
+        [SerializeField] private EnemyGun enemyGun;
         
         private void OnEnable()
         {
@@ -29,7 +28,6 @@ namespace Enemies
 
         private void Start()
         {
-            _playerTransform = GameObject.FindWithTag("Player").transform;
             StartCoroutine(ShootRoutine());
         }
 
@@ -38,16 +36,9 @@ namespace Enemies
             for (;;)
             {
                 yield return new WaitForSeconds(fireRateSeconds);
-                Shoot();
+                // Shoot();
+                enemyGun.Shoot();
             }
-        }
-
-        private void Shoot()
-        {
-            shootAudioSource.Play();
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            Vector3 direction = (_playerTransform.position - transform.position).normalized;
-            bullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(direction.x, direction.y, 0);
         }
     }
 }

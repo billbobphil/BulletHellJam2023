@@ -29,7 +29,6 @@ namespace General
             Instantiate(playerPrefab, gridManager.GetCenterOfGrid(), Quaternion.identity);
             wallGenerator.GenerateWalls(-1, gridManager.width, -1, gridManager.height);
             backgroundImage.transform.position = gridManager.GetCenterOfGrid();
-            levelManager.StartLevel();
         }
 
         public static void PauseGame()

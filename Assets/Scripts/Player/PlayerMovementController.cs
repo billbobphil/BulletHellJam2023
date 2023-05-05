@@ -5,9 +5,12 @@ namespace Player
     public class PlayerMovementController : MonoBehaviour
     {
         public float speed;
+        public bool blockMovement;
         
         private void FixedUpdate()
         {
+            if (blockMovement) return;
+            
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 transform.position += Vector3.up * speed;

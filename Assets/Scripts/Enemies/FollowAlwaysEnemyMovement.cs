@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Enemies
 {
-    public class EnemyMovementController : MonoBehaviour
+    public class FollowAlwaysEnemyMovement : MonoBehaviour
     {
         private Transform _playerTransform;
         public float speed;
