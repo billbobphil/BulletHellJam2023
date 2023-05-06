@@ -120,14 +120,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6110255596673044466}
   - component: {fileID: 8570009600021950195}
-  - component: {fileID: 4708093392268424121}
   - component: {fileID: 8597704431119151237}
   - component: {fileID: 1671783976760963678}
   - component: {fileID: -4027650017926273781}
   - component: {fileID: -1817348785705209516}
-  - component: {fileID: 418623335}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: TowerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +188,7 @@ SpriteRenderer:
   m_SortingLayerID: -127686623
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 86236525, guid: 621a6190c116c224b9c4069a262902dc, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: eda8292212307ee4683c592c24d56bd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -201,21 +199,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4708093392268424121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8529491548966735595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4639014a67d04be183aec87dd39928f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5009980097201075024, guid: 8ea1c71d7e6865242831332fcff1a1e5, type: 3}
-  fireRateSeconds: 1
-  shootAudioSource: {fileID: -1817348785705209516}
 --- !u!61 &8597704431119151237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -233,7 +216,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.96875}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -455,23 +438,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &418623335
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8529491548966735595}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2ac6b598979a50e49a894811e1734314, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

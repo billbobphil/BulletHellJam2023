@@ -21,7 +21,7 @@ namespace Player
             if (other.gameObject.CompareTag("Enemy"))
             {
                 OnPlayerHit?.Invoke(1);
-                other.gameObject.GetComponent<EnemyHealthController>().HitEnemy(1);
+                // other.gameObject.GetComponent<EnemyHealthController>().HitEnemy(1);
             }
 
             if (other.gameObject.CompareTag("Coin"))

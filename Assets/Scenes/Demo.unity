@@ -826,6 +826,10 @@ PrefabInstance:
       propertyPath: enterBuildPhaseCommand
       value: 
       objectReference: {fileID: 1946270998}
+    - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
+      propertyPath: levelData.towerPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5499057232050095990, guid: 78b0ae7bfe851474b9aed3ae11ddeb5f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
 --- !u!1001 &4060163854531327903

@@ -6566,7 +6566,7 @@ MonoBehaviour:
   buildModePanel: {fileID: 1114729235}
   levelData:
     towerPrefabs:
-    - {fileID: 8529491548966735595, guid: da1f1b3eb99247d429f89877b06688d9, type: 3}
+    - {fileID: 5499057232050095990, guid: 78b0ae7bfe851474b9aed3ae11ddeb5f, type: 3}
     towerQuantities: 0f000000
     waves:
     - enemySpawns:
