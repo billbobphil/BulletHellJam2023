@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3146679255585464764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3146679255585464754}
+  - component: {fileID: 3146679255585464755}
+  m_Layer: 0
+  m_Name: GridManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3146679255585464754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146679255585464764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.62705386, y: -0.24497762, z: -0.17381959}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3146679255585464755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146679255585464764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10236283a4134c37a7932fbebcb8152a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 17
+  height: 13
+  tilePrefab: {fileID: 4673897301783375852, guid: 44a65b60f234b614697c9cee8f16a75b, type: 3}
+  mainCamera: {fileID: 0}
+  showIndividualTiles: 0
+  allowTileSelection: 0
+  normalColor: {r: 0.26666668, g: 0.2509804, b: 0.3019608, a: 0.5882353}
+  showTilesColorOne: {r: 0.26666668, g: 0.2509804, b: 0.3019608, a: 1}
+  showTilesColorTwo: {r: 0.30548012, g: 0.28996083, b: 0.33962262, a: 1}
+  tileHighlightColor: {r: 0.95686275, g: 0.80784315, b: 0.8, a: 1}
+  buildPhaseManager: {fileID: 0}

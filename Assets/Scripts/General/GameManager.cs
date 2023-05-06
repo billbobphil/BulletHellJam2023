@@ -1,5 +1,6 @@
 ﻿using Grid;
 using UnityEngine;
+using Utilities;
 
 namespace General
 {
@@ -14,6 +15,7 @@ namespace General
         public LevelManager levelManager;
         [SerializeField] private GameObject backgroundImage;
         public GameObject gameOverPanel;
+        private static GameObject _mainCamera;
 
         private void Awake()
         {
@@ -21,6 +23,7 @@ namespace General
             IsWaveSpawning = false;
             BlockBuildInput = false;
             gameOverPanel.SetActive(false);
+            _mainCamera = GameObject.FindWithTag("MainCamera");
         }
         
         private void Start()
@@ -41,6 +44,7 @@ namespace General
         {
             IsGamePaused = false;
             Time.timeScale = 1;
+            _mainCamera.GetComponent<CameraPositionResetter>().ResetCameraPosition();
         }
 
         private void LateUpdate()

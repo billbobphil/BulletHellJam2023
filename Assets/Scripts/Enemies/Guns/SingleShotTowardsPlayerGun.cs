@@ -6,7 +6,7 @@ namespace Enemies.Guns
     public class SingleShotTowardsPlayerGun : EnemyGun
     {
         private Transform _playerTransform;
-        public GameObject bulletPrefab;
+        
         private void Start()
         {
             _playerTransform = GameObject.FindWithTag("Player").transform;

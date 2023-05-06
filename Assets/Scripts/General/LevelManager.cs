@@ -26,7 +26,12 @@ namespace General
         public int startingCoins;
         [SerializeField] private CoinManager coinManager;
         [SerializeField] private GameObject buildPhaseLabelFlair;
-        private bool hasLevelBeenStarted;
+        private bool _hasLevelBeenStarted;
+        private bool _timerHasExpired;
+        [SerializeField] private Timer levelTimer;
+        [SerializeField] private AudioSource timerEndAudioSource;
+
+        public static UnityAction TimerExpired;
 
         public void Awake()
         {
@@ -57,10 +62,24 @@ namespace General
 
         public void StartLevel()
         {
-            if (hasLevelBeenStarted) return;
+            if (_hasLevelBeenStarted) return;
             waveManager.RunWaves();
+            levelTimer.StartTimer();
         }
 
+        private void Update()
+        {
+            if(_timerHasExpired) return;
+            
+            if(levelTimer.GetTime() <= 0)
+            {
+                _timerHasExpired = true;
+                levelTimer.StopTimer();
+                timerEndAudioSource.Play();
+                TimerExpired?.Invoke();
+            }
+        }
+        
         public bool ActivateBuildPhase()
         {
             if (coinManager.currentCoins > 0)

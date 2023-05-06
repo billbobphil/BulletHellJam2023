@@ -17,11 +17,13 @@ namespace Player
         private void OnEnable()
         {
             PlayerHealthController.OnPlayerDeath += HandlePlayerDeath;
+            LevelManager.TimerExpired += HandlePlayerDeath;
         }
         
         private void OnDisable()
         {
             PlayerHealthController.OnPlayerDeath -= HandlePlayerDeath;
+            LevelManager.TimerExpired -= HandlePlayerDeath;
         }
         
         private void HandlePlayerDeath()
