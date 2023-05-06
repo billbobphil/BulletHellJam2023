@@ -30,6 +30,7 @@ namespace General
         private bool _timerHasExpired;
         [SerializeField] private Timer levelTimer;
         [SerializeField] private AudioSource timerEndAudioSource;
+        private GameObject _gameManager;
 
         public static UnityAction TimerExpired;
 
@@ -37,6 +38,7 @@ namespace General
         {
             playModePanel.SetActive(true);
             waveManager.SetWaves(levelData.waves);
+            _gameManager = GameObject.FindWithTag("GameManager");
         }
 
         public void Start()
@@ -69,6 +71,11 @@ namespace General
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                _gameManager.GetComponent<Navigation>().ResetLevel();
+            }
+            
             if(_timerHasExpired) return;
             
             if(levelTimer.GetTime() <= 0)
