@@ -18,6 +18,7 @@ namespace Utilities
         {
             currentDialogIndex = 0;
             ChangeDialog();
+            GameManager.ResumeGame();
         }
 
         private void Update()

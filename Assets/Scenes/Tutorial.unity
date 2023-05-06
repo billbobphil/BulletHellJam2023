@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c4e87e453acc640b89bdedc33d79d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: {fileID: 102900000, guid: 3eb570d50b430914282478f889e25981, type: 3}
+  nextLevel: {fileID: 102900000, guid: 7f9152105e681b945b814127a065d0fe, type: 3}
   mainMenu: {fileID: 102900000, guid: f3710fb5dcfa0b747b8842c3086c9135, type: 3}
 --- !u!114 &168007754
 MonoBehaviour:
@@ -9643,6 +9643,7 @@ MonoBehaviour:
   buildPhaseToggleAudioSource: {fileID: 1485211169}
   playerDeathAudioSource: {fileID: 1485211170}
   coinPickupAudioSource: {fileID: 1485211171}
+  mineTowerExplosionAudioSource: {fileID: 0}
 --- !u!4 &1485211168
 Transform:
   m_ObjectHideFlags: 0

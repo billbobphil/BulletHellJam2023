@@ -836,11 +836,11 @@ PrefabInstance:
       objectReference: {fileID: 1946270998}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.towerPrefabs.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.towerPrefabs.Array.data[0]
@@ -851,16 +851,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8972579649746301318, guid: 040efb0130137a141acf58bb5045a8e2, type: 3}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
+      propertyPath: levelData.towerPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 779684231695349660, guid: 97137e0e85229324bb5d14232e8d2380, type: 3}
+    - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.towerQuantities.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.towerQuantities.Array.data[0]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.towerQuantities.Array.data[1]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
+      propertyPath: levelData.towerQuantities.Array.data[2]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[0].enemySpawns.Array.size
@@ -872,12 +880,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[2].enemySpawns.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[0].enemySpawns.Array.data[0].enemyPrefab
       value: 
-      objectReference: {fileID: 2803743102261591307, guid: 0d2c784a5d705874f99f9f1cb8b1869c, type: 3}
+      objectReference: {fileID: 6798777069863968821, guid: 8d2f362afd2d29a4ea8ae71a3720b2c8, type: 3}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[0].enemySpawns.Array.data[1].enemyPrefab
       value: 
@@ -885,7 +893,7 @@ PrefabInstance:
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[1].enemySpawns.Array.data[0].enemyPrefab
       value: 
-      objectReference: {fileID: 2382043811759936418, guid: 4a04ec9bd0f821c4f9468b6866c3e756, type: 3}
+      objectReference: {fileID: 6798777069863968821, guid: 8d2f362afd2d29a4ea8ae71a3720b2c8, type: 3}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[1].enemySpawns.Array.data[1].enemyPrefab
       value: 
@@ -897,7 +905,7 @@ PrefabInstance:
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[2].enemySpawns.Array.data[0].enemyPrefab
       value: 
-      objectReference: {fileID: 2803743102261591307, guid: 0d2c784a5d705874f99f9f1cb8b1869c, type: 3}
+      objectReference: {fileID: 6798777069863968821, guid: 8d2f362afd2d29a4ea8ae71a3720b2c8, type: 3}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[2].enemySpawns.Array.data[1].enemyPrefab
       value: 
@@ -908,11 +916,11 @@ PrefabInstance:
       objectReference: {fileID: 2382043811759936418, guid: 4a04ec9bd0f821c4f9468b6866c3e756, type: 3}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[0].enemySpawns.Array.data[0].spawnLocation.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[0].enemySpawns.Array.data[0].spawnLocation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[0].enemySpawns.Array.data[1].spawnLocation.x
@@ -920,15 +928,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[1].enemySpawns.Array.data[0].spawnLocation.x
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[1].enemySpawns.Array.data[0].spawnLocation.y
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[1].enemySpawns.Array.data[1].spawnLocation.x
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[1].enemySpawns.Array.data[1].spawnLocation.y
@@ -936,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[1].enemySpawns.Array.data[2].spawnLocation.x
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[1].enemySpawns.Array.data[2].spawnLocation.y
@@ -944,15 +952,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[2].enemySpawns.Array.data[0].spawnLocation.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[2].enemySpawns.Array.data[0].spawnLocation.y
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[2].enemySpawns.Array.data[1].spawnLocation.x
-      value: 16
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[2].enemySpawns.Array.data[1].spawnLocation.y
@@ -960,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[2].enemySpawns.Array.data[2].spawnLocation.x
-      value: 8
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781879, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: levelData.waves.Array.data[2].enemySpawns.Array.data[2].spawnLocation.y

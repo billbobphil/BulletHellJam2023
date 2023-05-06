@@ -518,6 +518,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1024965479246589292, guid: 7ea8bd8ca0943c24893bfae4adca33dd, type: 3}
+      propertyPath: nextLevel
+      value: 
+      objectReference: {fileID: 102900000, guid: 7e485bf14852d9649a8c45171f773ea8, type: 3}
     - target: {fileID: 1024965479246589294, guid: 7ea8bd8ca0943c24893bfae4adca33dd, type: 3}
       propertyPath: levelManager
       value: 
@@ -728,7 +732,7 @@ PrefabInstance:
       objectReference: {fileID: 695164326}
     - target: {fileID: 893265513, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: timerDurationSeconds
-      value: 40
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3731800753912781876, guid: fd0b277ce3cd88446b945a7994084842, type: 3}
       propertyPath: m_RootOrder

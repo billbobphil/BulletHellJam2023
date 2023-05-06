@@ -1,6 +1,7 @@
 using System;
 using Enemies;
 using Player;
+using Towers;
 using UnityEngine;
 
 namespace General
@@ -11,6 +12,7 @@ namespace General
         [SerializeField] private AudioSource buildPhaseToggleAudioSource;
         [SerializeField] private AudioSource playerDeathAudioSource;
         [SerializeField] private AudioSource coinPickupAudioSource;
+        [SerializeField] private AudioSource mineTowerExplosionAudioSource;
 
         private void OnEnable()
         {
@@ -18,6 +20,7 @@ namespace General
             LevelManager.OnBuildPhaseToggled += PlayBuildPhaseToggleSound;
             PlayerHealthController.OnPlayerDeath += PlayPlayerDeathSound;
             CoinManager.CollectedCoin += PlayCoinPickupSound;
+            MineTower.MineTriggered += PlayMineExplosionSound;
         }
         
         private void OnDisable()
@@ -26,6 +29,7 @@ namespace General
             LevelManager.OnBuildPhaseToggled -= PlayBuildPhaseToggleSound;
             PlayerHealthController.OnPlayerDeath -= PlayPlayerDeathSound;
             CoinManager.CollectedCoin -= PlayCoinPickupSound;
+            MineTower.MineTriggered -= PlayMineExplosionSound;
         }
         
         private void PlayEnemyHitSound()
@@ -46,6 +50,11 @@ namespace General
         private void PlayCoinPickupSound(int _)
         {
             coinPickupAudioSource.Play();
+        }
+        
+        private void PlayMineExplosionSound()
+        {
+            mineTowerExplosionAudioSource.Play();
         }
     }
 }

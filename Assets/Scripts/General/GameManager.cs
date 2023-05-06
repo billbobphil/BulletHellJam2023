@@ -44,7 +44,14 @@ namespace General
         {
             IsGamePaused = false;
             Time.timeScale = 1;
-            _mainCamera.GetComponent<CameraPositionResetter>().ResetCameraPosition();
+            if (_mainCamera is null)
+            {
+                _mainCamera = GameObject.FindWithTag("MainCamera");
+            }
+            else
+            {
+                _mainCamera.GetComponent<CameraPositionResetter>().ResetCameraPosition();    
+            }
         }
 
         private void LateUpdate()
