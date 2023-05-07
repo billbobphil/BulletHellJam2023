@@ -31,7 +31,7 @@ namespace Towers
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Enemy"))
+            if (other.CompareTag("Enemy") || other.CompareTag("BossHand"))
             {
                 TriggerMine(other.gameObject);    
             }
@@ -45,6 +45,12 @@ namespace Towers
             {
                 MineTriggered?.Invoke();
                 objectThatSteppedOnMine.GetComponent<EnemyHealthController>().HitEnemy(mineExplosionDamage);
+                FireShrapnel();
+            }
+            else if (objectThatSteppedOnMine.CompareTag("BossHand"))
+            {
+                MineTriggered?.Invoke();
+                objectThatSteppedOnMine.GetComponent<BossHand>().bossHealthController.HitEnemy(2);
                 FireShrapnel();
             }
             else if (objectThatSteppedOnMine.CompareTag("Player"))

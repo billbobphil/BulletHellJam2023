@@ -22,6 +22,7 @@ namespace General
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
+        [ContextMenu("Load Next Level")]
         public void LoadNextLevel()
         {
             Debug.Log("Loading next level");

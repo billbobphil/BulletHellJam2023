@@ -9,7 +9,7 @@ namespace Enemies
     public class EnemyHealthController : MonoBehaviour
     {
         [SerializeField] private float maxHealth;
-        private float _currentHealth;
+        [SerializeField] private float _currentHealth;
         [SerializeField]
         private HealthBar healthBar;
         [SerializeField] private EnemyHitAnimator enemyHitAnimator;
@@ -36,6 +36,16 @@ namespace Enemies
                 OnEnemyDeath?.Invoke(gameObject);
                 Destroy(gameObject);
             }
+        }
+        
+        public float GetCurrentHealth()
+        {
+            return _currentHealth;
+        }
+
+        public float GetMaxHealth()
+        {
+            return maxHealth;
         }
     }
 }

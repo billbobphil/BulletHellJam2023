@@ -8,12 +8,18 @@ namespace Bullets
         protected override void OnTriggerEnter2D(Collider2D other)
         {
             base.OnTriggerEnter2D(other);
-            
-            if (!other.CompareTag("Enemy")) return;
 
-            //TODO: presumably some logic here about amount of damage the bullet does
-            other.gameObject.GetComponent<EnemyHealthController>().HitEnemy(1);
-            Destroy(gameObject);
+            if (other.CompareTag("Enemy"))
+            {
+                other.gameObject.GetComponent<EnemyHealthController>().HitEnemy(1);
+                Destroy(gameObject);    
+            }
+            else if (other.CompareTag("BossHand"))
+            {
+                other.gameObject.GetComponent<BossHand>().bossHealthController.HitEnemy(1);
+            }
+
+            
         }
     }
 }

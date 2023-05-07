@@ -19,7 +19,7 @@ namespace Player
                 OnPlayerHit?.Invoke(1);
             }
             
-            if (other.gameObject.CompareTag("Enemy"))
+            if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("BossHand"))
             {
                 OnPlayerHit?.Invoke(1);
             }

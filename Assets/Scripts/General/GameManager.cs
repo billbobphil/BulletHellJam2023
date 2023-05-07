@@ -52,6 +52,7 @@ namespace General
             {
                 _mainCamera.GetComponent<CameraPositionResetter>().ResetCameraPosition();    
             }
+            
         }
 
         private void LateUpdate()

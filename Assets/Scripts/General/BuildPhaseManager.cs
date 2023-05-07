@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Grid;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace General
@@ -17,6 +18,8 @@ namespace General
         private GameObject _selectedTowerPrefab;
         public GridManager gridManager;
         public LevelManager levelManager;
+
+        public static UnityAction<GameObject> TowerPlaced;
 
         private void Start()
         {
@@ -71,7 +74,8 @@ namespace General
             {
                 //TODO: Guard this functionality with clauses if we want some sort of limiting / purchase system
                 
-                Instantiate(_selectedTowerPrefab, towerCoordinates, Quaternion.identity);
+                GameObject createdTower = Instantiate(_selectedTowerPrefab, towerCoordinates, Quaternion.identity);
+                TowerPlaced?.Invoke(createdTower);
                 gridManager.MarkTileAsOccupied(towerCoordinates);
 
                 _towerQuantities[index]--;
