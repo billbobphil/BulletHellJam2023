@@ -130,6 +130,14 @@ namespace Grid
         {
             tiles[tileCoordinates].isOccupied = true;
         }
+        
+        public void MarkAllTilesAsAvailable()
+        {
+            foreach (KeyValuePair<Vector2, GridTile> tile in tiles)
+            {
+                tile.Value.isOccupied = false;
+            }
+        }
 
         private void SetTileColor(GridTile tile)
         {

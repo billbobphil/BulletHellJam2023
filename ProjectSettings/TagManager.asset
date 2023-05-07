@@ -16,6 +16,7 @@ TagManager:
   - MineTower
   - StompHitBox
   - BossHand
+  - GridManager
   layers:
   - Default
   - TransparentFX

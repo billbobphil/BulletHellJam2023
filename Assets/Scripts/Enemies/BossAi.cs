@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Bullets;
 using General;
+using Grid;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -22,6 +23,7 @@ namespace Enemies
         [SerializeField] private GameObject leftHand;
         [SerializeField] private GameObject rightHand;
         [SerializeField] private AudioSource shootAudioSource;
+        private GridManager _gridManager;
 
         private enum BossPhases
         {
@@ -41,6 +43,7 @@ namespace Enemies
             _startingHealth = _enemyHealthController.GetMaxHealth();
             leftHand.SetActive(false);
             rightHand.SetActive(false);
+            _gridManager = GameObject.FindWithTag("GridManager").GetComponent<GridManager>();
         }
 
         private void OnEnable()
@@ -76,6 +79,7 @@ namespace Enemies
                     if (_enemyHealthController.GetCurrentHealth() <= phaseHealthThresholds[0])
                     {
                         DestroyTowers();
+                        _gridManager.MarkAllTilesAsAvailable();
                         currentPhase = BossPhases.Phase2;
                         break;
                     }
@@ -98,6 +102,7 @@ namespace Enemies
                     if (_enemyHealthController.GetCurrentHealth() <= phaseHealthThresholds[1])
                     {
                         DestroyTowers();
+                        _gridManager.MarkAllTilesAsAvailable();
                         currentPhase = BossPhases.Phase3;
                         break;
                     }
@@ -188,13 +193,13 @@ namespace Enemies
                 leftBullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(1, 1);
             }
             
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 GameObject leftBullet = Instantiate(bulletPrefab, new Vector3(15, i * 2.5f + yOffsetLeft), Quaternion.identity);
                 leftBullet.GetComponent<DirectionalEnemyBullet>().direction = Vector3.left;
             }
             
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 GameObject rightBullet = Instantiate(bulletPrefab, new Vector3(0, i * 2.5f + yOffsetRight), Quaternion.identity);
                 rightBullet.GetComponent<DirectionalEnemyBullet>().direction = Vector3.right;
@@ -210,50 +215,50 @@ namespace Enemies
             isShooting = true;
             shootAudioSource.Play();
 
-            const int bulletsToShoot = 7;
+            const int bulletsToShoot = 5;
 
             int yOffsetLeft = shootCyclesExecuted % 2 == 0 ? 0 : 1;
             int yOffsetRight = shootCyclesExecuted % 2 == 0 ? 1 : 0;
             
-            // for (int i = 0; i < bulletsToShoot; i++)
-            // {
-            //     GameObject leftBullet = Instantiate(bulletPrefab, new Vector3(15, i * 2.5f + yOffsetLeft), Quaternion.identity);
-            //     leftBullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(-1, -1);
-            // }
-            //
-            // for (int i = 0; i < bulletsToShoot; i++)
-            // {
-            //     GameObject leftBullet = Instantiate(bulletPrefab, new Vector3(0, i * 2.5f + yOffsetRight), Quaternion.identity);
-            //     leftBullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(1, 1);
-            // }
-            //
-            // for (int i = 0; i < 4; i++)
-            // {
-            //     GameObject leftBullet = Instantiate(bulletPrefab, new Vector3(15, i * 2.5f + yOffsetLeft), Quaternion.identity);
-            //     leftBullet.GetComponent<DirectionalEnemyBullet>().direction = Vector3.left;
-            // }
-            //
-            // for (int i = 0; i < 4; i++)
-            // {
-            //     GameObject rightBullet = Instantiate(bulletPrefab, new Vector3(0, i * 2.5f + yOffsetRight), Quaternion.identity);
-            //     rightBullet.GetComponent<DirectionalEnemyBullet>().direction = Vector3.right;
-            // }
-            
             for (int i = 0; i < bulletsToShoot; i++)
             {
-                GameObject topBullet = Instantiate(bulletPrefab, new Vector3(i * 2.5f + yOffsetLeft, 0), Quaternion.identity);
-                topBullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(0, 1);
+                GameObject leftBullet = Instantiate(bulletPrefab, new Vector3(15, i * 3f + yOffsetLeft), Quaternion.identity);
+                leftBullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(-1, -1);
             }
             
             for (int i = 0; i < bulletsToShoot; i++)
             {
-                GameObject bottomBullet = Instantiate(bulletPrefab, new Vector3(i * 2.5f + yOffsetRight, 12), Quaternion.identity);
+                GameObject leftBullet = Instantiate(bulletPrefab, new Vector3(0, i * 3f + yOffsetRight), Quaternion.identity);
+                leftBullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(1, 1);
+            }
+            
+            for (int i = 0; i < 3; i++)
+            {
+                GameObject leftBullet = Instantiate(bulletPrefab, new Vector3(15, i * 3f + yOffsetLeft), Quaternion.identity);
+                leftBullet.GetComponent<DirectionalEnemyBullet>().direction = Vector3.left;
+            }
+            
+            for (int i = 0; i < 3; i++)
+            {
+                GameObject rightBullet = Instantiate(bulletPrefab, new Vector3(0, i * 3f + yOffsetRight), Quaternion.identity);
+                rightBullet.GetComponent<DirectionalEnemyBullet>().direction = Vector3.right;
+            }
+            
+            for (int i = 0; i < 6; i++)
+            {
+                GameObject topBullet = Instantiate(bulletPrefab, new Vector3(i * 3f + yOffsetLeft, 0), Quaternion.identity);
+                topBullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(0, 1);
+            }
+            
+            for (int i = 0; i < 6; i++)
+            {
+                GameObject bottomBullet = Instantiate(bulletPrefab, new Vector3(i * 3f + yOffsetRight, 12), Quaternion.identity);
                 bottomBullet.GetComponent<DirectionalEnemyBullet>().direction = new Vector3(0, -1);
             }
 
             yield return new WaitForSeconds(2);
             isShooting = false;
-            shootCyclesExecuted++;
+            shootCyclesExecuted += 2;
         }
 
         private IEnumerator DamagePhase()

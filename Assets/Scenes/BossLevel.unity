@@ -518,6 +518,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1024965479246589292, guid: 7ea8bd8ca0943c24893bfae4adca33dd, type: 3}
+      propertyPath: nextLevel
+      value: 
+      objectReference: {fileID: 102900000, guid: 1dbb624af81aeb3428109aead5955c01, type: 3}
     - target: {fileID: 1024965479246589294, guid: 7ea8bd8ca0943c24893bfae4adca33dd, type: 3}
       propertyPath: levelManager
       value: 
@@ -639,10 +643,6 @@ PrefabInstance:
     - target: {fileID: 3146679255585464754, guid: eef3104c62aa2074c947a5cd1f08432f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3146679255585464755, guid: eef3104c62aa2074c947a5cd1f08432f, type: 3}
-      propertyPath: height
-      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3146679255585464755, guid: eef3104c62aa2074c947a5cd1f08432f, type: 3}
       propertyPath: mainCamera
