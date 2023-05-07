@@ -1427,8 +1427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c4e87e453acc640b89bdedc33d79d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: {fileID: 102900000, guid: e8054a54d8cfbf545a892633f48ee4ce, type: 3}
-  mainMenu: {fileID: 102900000, guid: f3710fb5dcfa0b747b8842c3086c9135, type: 3}
+  nextLevel: 1
+  mainMenu: 0
 --- !u!4 &450511573
 Transform:
   m_ObjectHideFlags: 0

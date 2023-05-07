@@ -12,29 +12,29 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: f3710fb5dcfa0b747b8842c3086c9135
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 17c538ffe6a4f5b4bb5b6599fd2410a8
-  - enabled: 1
-    path: Assets/Scenes/Level_One.unity
-    guid: 3eb570d50b430914282478f889e25981
-  - enabled: 1
-    path: Assets/Scenes/Level_Two.unity
-    guid: fb06deebf29fbb041b2d02fde0579be0
-  - enabled: 1
-    path: Assets/Scenes/Level_Three.unity
-    guid: a44fd64fe93acc44a956b2eb0e25a796
-  - enabled: 1
     path: Assets/Scenes/Story__Menu-Tutorial.unity
     guid: e8054a54d8cfbf545a892633f48ee4ce
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 17c538ffe6a4f5b4bb5b6599fd2410a8
   - enabled: 1
     path: Assets/Scenes/Story__Tutorial-One.unity
     guid: 7f9152105e681b945b814127a065d0fe
   - enabled: 1
+    path: Assets/Scenes/Level_One.unity
+    guid: 3eb570d50b430914282478f889e25981
+  - enabled: 1
     path: Assets/Scenes/Story__One-Two.unity
     guid: ab514137dea8de040bc209558bca9dbe
   - enabled: 1
+    path: Assets/Scenes/Level_Two.unity
+    guid: fb06deebf29fbb041b2d02fde0579be0
+  - enabled: 1
     path: Assets/Scenes/Story__Two-Three.unity
     guid: 7e485bf14852d9649a8c45171f773ea8
+  - enabled: 1
+    path: Assets/Scenes/Level_Three.unity
+    guid: a44fd64fe93acc44a956b2eb0e25a796
   - enabled: 1
     path: Assets/Scenes/Story__Three-Boss.unity
     guid: 5dee902168ba159468fa3c904ade90cb

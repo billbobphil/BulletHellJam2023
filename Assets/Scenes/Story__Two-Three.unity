@@ -666,8 +666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c4e87e453acc640b89bdedc33d79d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: {fileID: 102900000, guid: a44fd64fe93acc44a956b2eb0e25a796, type: 3}
-  mainMenu: {fileID: 0}
+  nextLevel: 8
+  mainMenu: 0
 --- !u!4 &683226449
 Transform:
   m_ObjectHideFlags: 0
@@ -1945,11 +1945,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8859711352672852845, guid: a70273a64e4376f4a95c1facc209349a, type: 3}
       propertyPath: dialogLines.Array.data[0]
-      value: Nice work! But it seems you've only angered them.
+      value: Excellent! There are more coming though.
       objectReference: {fileID: 0}
     - target: {fileID: 8859711352672852845, guid: a70273a64e4376f4a95c1facc209349a, type: 3}
       propertyPath: dialogLines.Array.data[1]
-      value: They are bringing reinforcements, but so are we!
+      value: I've got a new tool for you as well.
       objectReference: {fileID: 0}
     - target: {fileID: 8859711352672852845, guid: a70273a64e4376f4a95c1facc209349a, type: 3}
       propertyPath: dialogLines.Array.data[2]

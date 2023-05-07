@@ -7,8 +7,8 @@ namespace General
 {
     public class Navigation : MonoBehaviour
     {
-        [SerializeField] private SceneAsset nextLevel;
-        [SerializeField] private SceneAsset mainMenu;
+        [SerializeField] private int nextLevel;
+        [SerializeField] private int mainMenu;
         private MusicPlayer _musicPlayer;
 
         private void Awake()
@@ -27,7 +27,7 @@ namespace General
         {
             Debug.Log("Loading next level");
             ResetStatics();
-            SceneManager.LoadScene(nextLevel.name);
+            SceneManager.LoadScene(nextLevel);
             if (_musicPlayer is not null)
             {
                 _musicPlayer.UnPause();    
@@ -37,7 +37,7 @@ namespace General
         public void LoadMainMenu()
         {
             ResetStatics();
-            SceneManager.LoadScene(mainMenu.name);
+            SceneManager.LoadScene(mainMenu);
             _musicPlayer.Pause();
         }
 

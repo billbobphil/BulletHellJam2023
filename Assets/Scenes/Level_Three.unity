@@ -520,8 +520,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1024965479246589292, guid: 7ea8bd8ca0943c24893bfae4adca33dd, type: 3}
       propertyPath: nextLevel
-      value: 
-      objectReference: {fileID: 102900000, guid: 5dee902168ba159468fa3c904ade90cb, type: 3}
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1024965479246589294, guid: 7ea8bd8ca0943c24893bfae4adca33dd, type: 3}
       propertyPath: levelManager
       value: 

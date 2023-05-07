@@ -666,8 +666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c4e87e453acc640b89bdedc33d79d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: {fileID: 102900000, guid: fb06deebf29fbb041b2d02fde0579be0, type: 3}
-  mainMenu: {fileID: 0}
+  nextLevel: 6
+  mainMenu: 0
 --- !u!4 &683226449
 Transform:
   m_ObjectHideFlags: 0
